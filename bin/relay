@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+var log = require('../lib/log')('relay');
+var argv = require('minimist')(process.argv.slice(2));
+
+var cmd = argv._.shift() || 'help';
+
+log.bug(argv);
+
+try {
+  require('../cli/' + cmd)
+    .run(argv, function (code) {
+      process.exit(code);
+    });
+} catch (e) {
+  log.err('no such command "' + cmd + '"');
+  log.bug(e.stack);
+  process.exit(-1);
+}
