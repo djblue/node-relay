@@ -17,6 +17,31 @@ with npm do:
 
     $ npm install -g node-relay
 
+## example
+
+Relaying `https://www.npmjs.com` to `http://localhost:3000`.
+
+For the server do:
+
+```javascript
+var server = require('node-relay').server;
+server.start({
+  port: 3000,
+  token: 'randomstring'
+});
+```
+
+For the client do:
+
+```javascript
+var client = require('node-relay').client;
+client.connect({
+  server 'https://www.npmjs.com',
+  relay: 'http://localhost:3000',
+  token: 'randomstring'
+});
+```
+
 ## usage
 
     $ relay start # start a relay server
