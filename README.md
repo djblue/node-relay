@@ -11,7 +11,7 @@ back to the relay.
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 
-## install 
+## install
 
 with npm do:
 
@@ -44,18 +44,70 @@ client.connect({
 
 ## usage
 
-    $ relay start # start a relay server
+Default environment variables for configuration:
 
-    $ relay share # share a directory through a relay
+- `RELAY_TOKEN` - for both client and server.
+  - token to secure server.
+  - token for client to access server.
+- `RELAY_SERVER` - web address of relay server.
+- `PORT` - port for server to bind to; default is 3000.
 
-    $ relay proxy <addr> # proxy local server through a relay
+NOTE: command line parameters will overwrite environment
+variable configuration.
+
+### start
+
+Start a relay server.
+
+    $ relay start [opts]
+
+Options:
+
+- `--token='<tokenstring>'` - token to use for securing server.
+- `--port=<number>` - port for server to bind to; default is
+  3000.
+
+### share
+
+Share a directory through a relay server. Spins up a basic [serve-static](https://www.npmjs.com/package/serve-static) server and proxies it through the relay.
+
+    $ relay share [opts] <dir>
+
+NOTE: `<dir>` can be relative or absolute.
+
+Options:
+
+- `--token='<tokenstring>'` - token to use for connecting to relay server.
+- `--relay='<relayaddr>'` - web address of relay server.
+
+### proxy
+
+Proxy local server through a relay.
+
+    $ relay proxy <addr>
+
+Options:
+
+- `--token='<tokenstring>'` - token to use for connecting to relay server.
+- `--relay='<relayaddr>'` - web address of relay server.
+
+### ping
+
+Check if relay server is up; should respond with `pong`.
+
+    $ relay ping
+
+Options:
+
+- `--token='<tokenstring>'` - token to use for connecting to relay server.
+- `--relay='<relayaddr>'` - web address of relay server.
 
 ## the magic
 
 - http request comes into the relay-server
 - relay-server notifies relay-client about request using
   socket.io connection
-- relay-client starts http request to applicaiton server
+- relay-client starts http request to application server
 - relay-client pulls request body from relay-server and streams
   it to application server
 - relay-client pushes application server response headers/body
