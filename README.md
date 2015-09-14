@@ -6,6 +6,11 @@ An http relay that proxies http requests using socket.io to
 signal clients that forward the request and push the results
 back to the relay.
 
+## heroku deploy
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+
 ## install 
 
 with npm do:

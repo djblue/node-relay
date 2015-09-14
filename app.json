@@ -1,0 +1,7 @@
+{
+  "name": "node-relay",
+  "description": "Simple http node relay.",
+  "repository": "https://github.com/djblue/node-relay",
+  "logo": "https://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "http", "relay"]
+}
