@@ -27,6 +27,10 @@
     "test": "NODE_ENV=test tap ./test/*.js",
     "start": "./bin/relay start"
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/djblue/node-relay.git"
+  },
   "author": "a.s.badahdah@gmail.com",
   "license": "MIT"
 }
