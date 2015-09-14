@@ -1,6 +1,6 @@
 {
   "name": "node-relay",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A relay that proxies http servers across nats.",
   "main": "index.js",
   "dependencies": {
