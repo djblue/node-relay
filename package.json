@@ -1,6 +1,6 @@
 {
   "name": "node-relay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A relay that proxies http servers across nats.",
   "main": "index.js",
   "dependencies": {
@@ -27,9 +27,9 @@
     "test": "NODE_ENV=test tap ./test/*.js",
     "start": "./bin/relay start"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/djblue/node-relay.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/djblue/node-relay.git"
   },
   "author": "a.s.badahdah@gmail.com",
   "license": "MIT"
