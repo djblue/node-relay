@@ -68,14 +68,10 @@ Options:
 
 ### ping
 
-Check if relay server is up; should respond with `pong`.
+Check if relay server is up; should respond with `pong`. Will
+default to `RELAY_SERVER` if addr is not specified.
 
-    $ relay ping
-
-Options:
-
-- `--token='<tokenstring>'` - token to use for connecting to relay server.
-- `--relay='<relayaddr>'` - web address of relay server.
+    $ relay ping <addr>
 
 ## api
 

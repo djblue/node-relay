@@ -6,7 +6,7 @@ exports.run = function (argv, done) {
 
   var server = argv._[0] || process.env.RELAY_SERVER;
 
-  if (server === undefined) {
+  if (server === '') {
     log.err('please specify relay-server address');
     done(-1);
   }
